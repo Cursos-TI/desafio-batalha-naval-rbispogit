@@ -36,23 +36,49 @@ int main()
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
-    int tabuleiro[5][5];
-    int navio1[3] = {3, 3, 3};
-    int navio2[3] = {3, 3, 3};
 
+    // Criei uma variável para a linha do tabuleiro
+    char linha[5] = {'A', 'B', 'C', 'D', 'E'};
+
+    // Criei a matriz do tabuleiro
+    int tabuleiro[5][5] = 
+    {
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0}
+    };
+
+    // Declaração dos vetores navios
+    int navio1[3] = {3,3,3};
+    int navio2[3] = {3,3,3};
+
+    // Primeiro navio posicionado vertical
+    tabuleiro[0][0] = navio1[0];
+    tabuleiro[1][0] = navio1[1];
+    tabuleiro[2][0] = navio1[2];
+
+    // Segundo navio posicionado na horizontal
+    tabuleiro[4][4] = navio2[0];
+    tabuleiro[4][3] = navio2[1];
+    tabuleiro[4][2] = navio2[2];
+
+    // Constrói a linha
     for (int i = 0; i < 5; i++)
     {
-        for (int j = 0; j < 5; j++)
-        {
-            tabuleiro[i][j] = 0;
-        }
+        printf(" %c ", linha[i]);
     }
 
-    for (int i = 5; i > 0; i--)
+    printf("\n");
+
+    // Exibe o tabuleiro com os navios
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = 5; j > 0; j--)
+        printf("%d ", i + 1);
+        for (int j = 0; j < 5; j++)
         {
-            printf("[%d]", tabuleiro[i][j]);
+            printf(" %d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
