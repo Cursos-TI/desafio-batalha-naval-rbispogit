@@ -18,30 +18,56 @@ int main()
         for (int j = 0; j < COLUNAS; j++)
         {
             tabuleiro[i][j] = 0;
-            printf("%d ", tabuleiro[i][j]);
         }
-        printf("\n");
     }
 
     // Atribui três ao tamanho dos navios
     for (int i = 0; i < TAMANHO; i++)
     {
-        navio1[i], navio2[i] = TAMANHO;
-        navio3[i], navio4[i] = TAMANHO;
+        navio1[i] = TAMANHO;
+        navio2[i] = TAMANHO;
+        navio3[i] = TAMANHO;
+        navio4[i] = TAMANHO;
     }
 
+    // Posiciona o navio1 na vertical
     for (int i = 0; i < TAMANHO; i++)
     {
-        for (int j = 0; j > TAMANHO; j++)
+        for (int j = 0; j == 0; j++)
         {
-            tabuleiro[i][0] = navio1[i];
-            printf("%d", tabuleiro[i][j]);
+            tabuleiro[i][j] = navio1[i];
+        }
+    }
+
+    // Posiciona o navio2 na horizontal
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 9; j > 6; j--)
+        {
+            tabuleiro[9][j] = navio2[0];
+        }
+    }
+
+    // Posiciona o navio3 na diagonal
+    for (int i = 9; i >= 0; i--)
+    {
+        for (int j = 0; j < 10; j++)
+        {   
+            if (i == 9 && j == 0 || (i == 8 && j == 1) || (i == 7 && j == 2))
+            {
+                tabuleiro[i][j] = navio2[0];
+            }
+        }
+    }
+
+    // Exibe o tabuleiro atualizado
+    for (int i = 0; i < LINHAS; i++)
+    {
+        for (int j = 0; j < COLUNAS; j++)
+        {
+            printf("%d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
-
-
-    printf("\n\n");
-
-
+    return 0;
 }
