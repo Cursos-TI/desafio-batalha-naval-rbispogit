@@ -55,7 +55,19 @@ int main()
         {   
             if (i == 9 && j == 0 || (i == 8 && j == 1) || (i == 7 && j == 2))
             {
-                tabuleiro[i][j] = navio2[0];
+                tabuleiro[i][j] = navio3[0];
+            }
+        }
+    }
+
+    // Posiciona o navio4 na diagonal
+    for (int i = 0; i < 6; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {   
+            if (i == 1 && j == 4 || (i == 2 && j == 5) || (i == 3 && j == 6))
+            {
+                tabuleiro[i][j] = navio4[0];
             }
         }
     }
