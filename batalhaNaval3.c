@@ -35,7 +35,7 @@ int main()
     }
 
     // Ataque em Cone
-    for (int i = 0; i < MATRIZ_ATAQUE; i++) // Percorre uma matriz 5x5
+    for (int i = 0; i < MATRIZ_ATAQUE; i++) // Matriz 5x5 no canto superior esquerdo
     {
         for (int j = 0; j < MATRIZ_ATAQUE; j++)
         {
@@ -67,13 +67,13 @@ int main()
     }
 
     // Ataque em Cruz
-    for (int i = 9; i > 4; i--) // Matriz que começa no índice 9,9 e vai até 5,5
+    for (int i = 9; i > 4; i--) // Matriz 5x5 no canto inferior direito
     {
         for (int j = 9; j > 4; j--)
         {
             if (i == 8) // Acessa a linha 8, que é o centro do ataque
             {
-                for (int i = 5; i < 10; i++)
+                for (int i = 5; i < 10; i++) 
                 {
                     for (int j = 5; j < 10; j++)
                     {
@@ -90,6 +90,26 @@ int main()
                         tabuleiro[i][7] = 1; // A coluna 7 é sempre fixa
                     }
                 }
+            }
+        }
+    }
+
+    // Ataque em octaedro
+    for (int i = 9; i > 4; i--) // Matriz 5x5 no canto inferior esquerdo
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (i == 8)
+            {
+               tabuleiro[8][1] = 1;
+               tabuleiro[8][2] = 1;
+               tabuleiro[8][3] = 1;
+            }
+            else if (i == 9)
+            {
+                tabuleiro[9][2] = 1;
+                tabuleiro[8][2] = 1;
+                tabuleiro[7][2] = 1;
             }
         }
     }
